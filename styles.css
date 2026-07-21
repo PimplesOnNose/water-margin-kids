@@ -178,6 +178,213 @@ body {
     border-color: var(--accent-color);
 }
 
+/* Audio Progress Bar */
+.audio-progress-container {
+    width: 100%;
+    max-width: 400px;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+    margin: var(--spacing-sm) auto 0;
+    overflow: hidden;
+}
+
+.audio-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+    border-radius: 2px;
+    transition: width 0.1s linear;
+}
+
+/* Loading Spinner */
+.audio-loading {
+    position: relative;
+}
+
+.audio-loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid var(--border-color);
+    border-top-color: var(--accent-color);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Grid Toggle Button */
+.grid-toggle-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    border: 3px solid var(--secondary-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(140, 74, 47, 0.3);
+    transition: var(--transition);
+}
+
+.grid-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(140, 74, 47, 0.4);
+}
+
+.grid-toggle-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Page Grid Overlay */
+.page-grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(245, 240, 232, 0.97);
+    z-index: 200;
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+    animation: fadeIn 0.3s ease;
+}
+
+.page-grid-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.page-grid-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.grid-close-btn {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.grid-close-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.page-grid-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background: var(--bg-paper);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.grid-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.grid-item.active-page {
+    border-color: var(--accent-color);
+    background: rgba(193, 54, 42, 0.05);
+}
+
+.grid-item .page-num {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.grid-item.active-page .page-num {
+    background: var(--accent-color);
+}
+
+.grid-item .page-label-en {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.grid-item .page-label-cn {
+    font-family: var(--font-chinese);
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* Character Tooltip */
+.char-tooltip {
+    position: fixed;
+    background: var(--primary-color);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    z-index: 300;
+    max-width: 250px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    pointer-events: none;
+    animation: fadeIn 0.2s ease;
+}
+
+.char-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--primary-color);
+}
+
 /* Story container */
 .story-container {
     flex: 1;
@@ -277,6 +484,18 @@ body {
     margin-bottom: var(--spacing-xs);
 }
 
+.page-text .hanzi .char-highlight {
+    color: var(--accent-color);
+    cursor: pointer;
+    border-bottom: 2px dotted var(--accent-color);
+    transition: background 0.2s;
+    padding: 0 2px;
+}
+
+.page-text .hanzi .char-highlight:hover {
+    background: rgba(193, 54, 42, 0.1);
+}
+
 .page-text .pinyin {
     font-family: var(--font-body);
     font-size: 0.95rem;
@@ -289,6 +508,21 @@ body {
 
 .hidden {
     display: none !important;
+}
+
+/* Swipe hint */
+.swipe-hint {
+    text-align: center;
+    padding: var(--spacing-sm);
+    color: var(--text-light);
+    font-size: 0.8rem;
+    opacity: 0.7;
+    animation: fadeInOut 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
 }
 
 /* Navigation */
@@ -339,6 +573,9 @@ body {
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     box-shadow: 0 2px 4px var(--shadow-color);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
 }
 
 /* Footer */
@@ -414,16 +651,27 @@ body {
     .app-header::after {
         display: none;
     }
+    
+    .grid-toggle-btn {
+        bottom: 1rem;
+        right: 1rem;
+        width: 48px;
+        height: 48px;
+    }
+    
+    .page-grid-items {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
 }
 
 /* Print styles */
 @media print {
-    .controls, .page-navigation, .app-footer {
-        display: none;
+    .controls, .page-navigation, .app-footer, .grid-toggle-btn, .page-grid-overlay, .char-tooltip, .swipe-hint {
+        display: none !important;
     }
     
     .story-page {
-        display: block;
+        display: block !important;
         page-break-after: always;
     }
     

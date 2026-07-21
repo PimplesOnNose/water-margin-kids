@@ -21,7 +21,7 @@
                     <button id="langCn" class="lang-btn">中文</button>
                 </div>
                 <div class="audio-controls">
-                    <button id="audioToggle" class="audio-btn" title="Toggle Audio">
+                    <button id="audioToggle" class="audio-btn" title="Play Audio">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                             <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
@@ -35,7 +35,30 @@
                     </button>
                 </div>
             </div>
+            <!-- Audio Progress Bar -->
+            <div id="audioProgressContainer" class="audio-progress-container" style="display:none;">
+                <div id="audioProgressBar" class="audio-progress-bar"></div>
+            </div>
         </header>
+
+        <!-- Page Navigator Toggle -->
+        <button id="gridToggle" class="grid-toggle-btn" title="Show all pages">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+            </svg>
+        </button>
+
+        <!-- Page Navigator Grid Overlay -->
+        <div id="pageGrid" class="page-grid-overlay" style="display:none;">
+            <div class="page-grid-header">
+                <h2>All Pages</h2>
+                <button id="gridClose" class="grid-close-btn">&times;</button>
+            </div>
+            <div class="page-grid-items" id="pageGridItems"></div>
+        </div>
 
         <!-- Main Content -->
         <main class="story-container">
@@ -72,7 +95,7 @@
                         <h2 class="page-title en">Wu Song and the Tiger</h2>
                         <h2 class="page-title cn hidden">武松打虎</h2>
                         <div class="page-text en">
-                            <p>One day, a brave man named Wu Song was walking through the mountains. He was tall and strong.</p>
+                            <p>One day, a brave man named Wu Song was walking through Jingyang Ridge. He was tall and strong.</p>
                             <p>Suddenly, a huge tiger jumped out! Wu Song was scared, but he didn't run. He fought the tiger with his bare hands and won! Everyone called him a hero.</p>
                         </div>
                         <div class="page-text cn hidden">
@@ -96,7 +119,7 @@
                         <h2 class="page-title cn hidden">鲁智深倒拔垂杨柳</h2>
                         <div class="page-text en">
                             <p>Lu Zhishen was a monk with a big heart and even bigger muscles. He didn't like bullies.</p>
-                            <p>One day, he saw a group of men bothering villagers. To show his strength, he grabbed a huge willow tree and pulled it right out of the ground! The bullies ran away scared.</p>
+                            <p>One day, he saw a group of bullies bothering villagers. To show his strength, he grabbed a huge willow tree and pulled it right out of the ground! The bullies ran away scared.</p>
                         </div>
                         <div class="page-text cn hidden">
                             <p class="hanzi">鲁智深是一个心地善良、力大无穷的和尚。他最看不惯欺负人的坏蛋。</p>
@@ -238,7 +261,7 @@
                         </div>
                         <div class="page-text cn hidden">
                             <p class="hanzi">直到今天，人们仍然在传颂梁山一百零八位好汉的故事。</p>
-                            <p class="pinyin">Zhídào jīntiān, réngrán zài chuánsòng Liángshān yībǎi líng bā wèi hǎohàn de gùshì.</p>
+                            <p class="pinyin">Zhídào jīntiān, rénmen réngrán zài chuánsòng Liángshān yībǎi líng bā wèi hǎohàn de gùshì.</p>
                             <p class="hanzi">他们的勇敢和友谊激励着我们每一个人。他们告诉我们，只要团结一致，就能克服任何困难。</p>
                             <p class="pinyin">Tāmen de yǒnggǎn hé yǒuyì jīlì zhe wǒmen měi yī gè rén. Tāmen gàosù wǒmen, zhǐyào tuánjié yīzhì, jiù néng kèfú rènhé kùnnán.</p>
                         </div>
@@ -288,6 +311,9 @@
                 </svg>
             </button>
         </nav>
+
+        <!-- Character Tooltip -->
+        <div id="charTooltip" class="char-tooltip" style="display:none;"></div>
 
         <!-- Footer -->
         <footer class="app-footer">
