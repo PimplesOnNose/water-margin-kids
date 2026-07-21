@@ -37,8 +37,8 @@ NARRATION = {
         "cn": "一百零八位好汉齐聚梁山，举行盛大的宴会。他们品尝美味佳肴，畅饮美酒。他们立下誓言，要互相帮助，伸张正义。他们就像一个大家庭一样团结。"
     },
     7: {
-        "en": "The heroes had to fight a big battle at a place called Tinghai. It was very dangerous. They used clever plans and worked together. They won the battle and saved many people. This showed how strong they were when they worked as a team.",
-        "cn": "英雄们在一个叫汀海的地方打了一场大仗。战斗非常危险。他们运用巧妙的计策，团结一致。他们赢得了战斗，救了许多人。这说明了团结起来是多么强大。"
+        "en": "The emperor sent a great army to attack Liangshan and capture the heroes. But the heroes were ready. They used clever strategies and fought bravely together. Wave after wave of soldiers came, but the heroes would not give up. Their unity and courage drove the enemy away.",
+        "cn": "皇帝派了大军前来攻打梁山，想要捉拿好汉们。好汉们早已做好准备。他们运用巧妙的计策，英勇奋战。一批又一批的官兵涌来，但好汉们团结一心，绝不放弃。他们的勇气最终击退了敌人。"
     },
     8: {
         "en": "The heroes lived by a special code. They promised to be brave, honest, and kind. They helped the poor and stood up against injustice. Even though they were different, they all believed in doing the right thing.",

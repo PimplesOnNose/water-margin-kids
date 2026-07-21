@@ -217,4 +217,4 @@ For issues or questions:
 
 ---
 
-*Created with MiMo-v2.5* | *Based on the classic Chinese novel "Water Margin" (水浒传)*
+*Crafted by [Pi](https://pi.dev) and [Deepseek](https://deepseek.com)* | *Based on the classic Chinese novel "Water Margin" (水浒传)*
