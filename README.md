@@ -6,6 +6,10 @@ An interactive webapp teaching the classic Chinese folktale "Water Margin" (水�
 
 This educational webapp presents the story of the 108 heroes of Liangshan in a child-friendly format with:
 
+### 🌐 Live Demo
+
+**[Water Margin for Kids](https://pimplesonnose.github.io/water-margin-kids/)** - Deployed on GitHub Pages
+
 - **Bilingual Content**: English (default) and Chinese with Hanzi and Pinyin
 - **Audio Narration**: Professional voice narration in both languages
 - **Traditional Illustrations**: Chinese painting style artwork for each scene
